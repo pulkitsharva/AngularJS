@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html data-ng-app="demoApp">
+<head>
+<title>Hello World, AngularJS - ViralPatel.net</title>
+</head>
+<body>
+<div data-ng-controller="Controller1">
+     <input type="search" data-ng-model="q" placeholder="filter friends..." />
+  <ul>
+    <li  data-ng-repeat="friend in friends | filter:q| orderBy:'name'">
+       {{friend.name}} who is {{friend.age}} years old.
+    </li>
+    <li data-ng-if="q.length == 0">
+      <strong>No results found...</strong>
+    </li>
+  </ul>
+</div>
+<script type="text/javascript" src="scripts/angular.js"></script>
+<script type="text/javascript" src="scripts/module.js"></script>
+</body>
+</html>

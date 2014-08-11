@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html data-ng-app="">
+<script src="scripts/angular.js"></script>
+<head>
+
+<meta charset="ISO-8859-1">
+<title>1st Tutorial</title>
+</head>
+<body>
+	<input type="text" data-ng-model="name"> {{ name }}
+	<div class="container" data-ng-init="names=['Pulkit','mintu','hanu','chintu']" >
+		<h3>list of names</h3>
+		<ul>
+			<li data-ng-repeat="foo in names">{{$index}} {{foo}}</li>	
+		</ul>
+	</div>
+</body>
+
+</html>

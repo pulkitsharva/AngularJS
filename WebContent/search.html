@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+<head>
+<meta charset="ISO-8859-1">
+<title>Search</title>
+</head>
+<body>
+<div data-ng-init="friends = [
+ {name:'Joyua', age:15, gender:'girl'},
+  {name:'John', age:25, gender:'boy'},
+  {name:'Jessie', age:30, gender:'girl'},
+  {name:'Johanna', age:28, gender:'girl'},
+  {name:'Joy', age:15, gender:'girl'},
+  {name:'Mary', age:28, gender:'girl'},
+  {name:'Peter', age:95, gender:'boy'},
+  {name:'Sebastian', age:50, gender:'boy'},
+  {name:'Erika', age:27, gender:'girl'},
+  {name:'Patrick', age:40, gender:'boy'},
+  {name:'Samantha', age:60, gender:'girl'}
+]">
+  
+  <input type="search" data-ng-model="q" placeholder="filter friends..." />
+  <ul>
+    <li  data-ng-repeat="friend in friends | filter:q| orderBy:'name'">
+       {{friend.name}} who is {{friend.age}} years old.
+    </li>
+    <li data-ng-if="q.length == 0">
+      <strong>No results found...</strong>
+    </li>
+  </ul>
+</div>
+</body>
+<script src="scripts/angular.js"></script>
+
+</html>
